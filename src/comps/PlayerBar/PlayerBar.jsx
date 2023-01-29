@@ -1,4 +1,6 @@
-import iconSprite from '../img/icon/sprite.svg'
+import './PlayerBar.css'
+import iconSprite from '../../img/icon/sprite.svg'
+import React from 'react'
 
 function PlayerBar(props) {
   return (
@@ -10,7 +12,7 @@ function PlayerBar(props) {
             <div className="player__controls">
               <div className="player__btn-prev">
                 <svg className="player__btn-prev-svg" alt="prev">
-                  <use xlinkHref="img/icon/sprite.svg#icon-prev"></use>
+                  <use xlinkHref={iconSprite + '#icon-prev'}></use>
                 </svg>
               </div>
               <div className="player__btn-play _btn">
@@ -37,21 +39,31 @@ function PlayerBar(props) {
 
             <div className="player__track-play track-play">
               <div className="track-play__contain">
-                <div className="track-play__image">
-                  <svg className="track-play__svg" alt="music">
-                    <use xlinkHref={iconSprite + '#icon-note'}></use>
-                  </svg>
-                </div>
-                <div className="track-play__author">
-                  <a className="track-play__author-link" href="http://">
-                    {props.title}
-                  </a>
-                </div>
-                <div className="track-play__album">
-                  <a className="track-play__album-link" href="http://">
-                    {props.author}
-                  </a>
-                </div>
+                {props.isSkeletonVisible ? (
+                  <React.Fragment>
+                    <div className="track-play__image-skeleton"></div>
+                    <div className="track-play__author-skeleton"></div>
+                    <div className="track-play__album-skeleton"></div>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <div className="track-play__image">
+                      <svg className="track-play__svg" alt="music">
+                        <use xlinkHref={iconSprite + '#icon-note'}></use>
+                      </svg>
+                    </div>
+                    <div className="track-play__author">
+                      <a className="track-play__author-link" href="http://">
+                        {props.title}
+                      </a>
+                    </div>
+                    <div className="track-play__album">
+                      <a className="track-play__album-link" href="http://">
+                        {props.author}
+                      </a>
+                    </div>
+                  </React.Fragment>
+                )}
               </div>
 
               <div className="track-play__like-dis">

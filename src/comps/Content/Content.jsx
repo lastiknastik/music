@@ -1,6 +1,8 @@
-import Playlist from './Playlist'
+import './Content.css'
+import iconSprite from '../../img/icon/sprite.svg'
+import Playlist from '../Playlist/Playlist'
 
-function Content() {
+function Content(props) {
   return (
     <div className="centerblock__content">
       <div className="content__title playlist-title">
@@ -9,11 +11,11 @@ function Content() {
         <div className="playlist-title__col col03">АЛЬБОМ</div>
         <div className="playlist-title__col col04">
           <svg className="playlist-title__svg" alt="time">
-            <use xlinkHref="img/icon/sprite.svg#icon-watch"></use>
+            <use xlinkHref={iconSprite + '#icon-watch'}></use>
           </svg>
         </div>
       </div>
-      <Playlist />
+      <Playlist isSkeletonVisible={props.isSkeletonVisible} />
     </div>
   )
 }
