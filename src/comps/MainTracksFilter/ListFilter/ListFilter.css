@@ -1,0 +1,43 @@
+.filter__button-list {
+  width: 248px;
+  height: 305px;
+  border-radius: 12px;
+  padding: 34px;
+  background: #313131;
+  position: absolute;
+}
+
+.filter_button-list-content {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  height: calc(305px - 2 * 34px);
+}
+
+.filter_button-list-content::-webkit-scrollbar {
+  width: 4px;
+  background: #4b4949;
+}
+
+.filter_button-list-content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.filter_button-list-content::-webkit-scrollbar-track {
+  height: 4px;
+}
+
+/* for test only */
+.filter_button-list-content div:first-of-type {
+  color: #b672ff;
+  text-decoration-line: underline;
+}
+
+.filter_button-list-content div {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+}
