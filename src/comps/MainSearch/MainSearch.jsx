@@ -1,19 +1,14 @@
-import './MainSearch.css'
 import iconSprite from '../../img/icon/sprite.svg'
+import * as S from './styles'
 
 function MainSearch() {
   return (
-    <div className="centerblock__search search">
-      <svg className="search__svg">
+    <S.Search>
+      <S.SearchImage>
         <use xlinkHref={iconSprite + '#icon-search'}></use>
-      </svg>
-      <input
-        className="search__text"
-        type="search"
-        placeholder="Поиск"
-        name="search"
-      ></input>
-    </div>
+      </S.SearchImage>
+      <S.InputSearch type="search" placeholder="Поиск" name="search" />
+    </S.Search>
   )
 }
 

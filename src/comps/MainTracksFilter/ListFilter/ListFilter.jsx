@@ -1,4 +1,4 @@
-import './ListFilter.css'
+import * as S from './styles'
 
 function ListFilter(props) {
   let data = []
@@ -30,16 +30,14 @@ function ListFilter(props) {
 
   let i = 0
 
-  const elementPosition = { top: props.top, left: props.left }
-
   return (
-    <div className="filter__button-list" style={elementPosition}>
-      <div className="filter_button-list-content">
+    <S.ListFilter top={props.top} left={props.left}>
+      <S.ListFilterContent>
         {data.map((item) => (
-          <div key={i++}>{item}</div>
+          <S.ListFilterItem key={i++}>{item}</S.ListFilterItem>
         ))}
-      </div>
-    </div>
+      </S.ListFilterContent>
+    </S.ListFilter>
   )
 }
 

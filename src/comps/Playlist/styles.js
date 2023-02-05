@@ -1,10 +1,22 @@
-.playlist__item {
+import styled, { css } from 'styled-components'
+
+export const Playlist = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+`
+export const PlaylistItem = styled.div`
   width: 100%;
   display: block;
   margin-bottom: 12px;
-}
+`
 
-.playlist__track {
+export const Track = styled.div`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,9 +30,9 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
+`
 
-.track__title {
+export const TrackTitle = styled.div`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,10 +44,9 @@
   -ms-flex-align: center;
   align-items: center;
   width: 447px;
-}
+`
 
-.track__title-image,
-.track__title-image-skeleton {
+const trackTitleImg = css`
   width: 51px;
   height: 51px;
   padding: 16px;
@@ -50,74 +61,28 @@
   -ms-flex-pack: center;
   justify-content: center;
   margin-right: 17px;
-}
+`
 
-.track__title-svg {
+export const TrackTitleImg = styled.div`
+  ${trackTitleImg}
+`
+export const TrackTitleImgSkeleton = styled.div`
+  ${trackTitleImg}
+`
+export const TrackTitleSvg = styled.svg`
   width: 18px;
   height: 17px;
   fill: transparent;
   stroke: #4e4e4e;
-}
+`
 
-.track__title-text-skeleton {
+export const TrackTitleTextSkeleton = styled.div`
   background-color: #313131;
   width: 100%;
   height: 1em;
-}
+`
 
-.track__title-link {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
-}
-
-.track__title-span {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #4e4e4e;
-}
-
-.track__album,
-.track__album-skeleton {
-  width: 245px;
-}
-
-.track__album-skeleton {
-  height: 1em;
-  background-color: #313131;
-}
-
-.track__album-link {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #696969;
-}
-
-.track__time-svg {
-  width: 14px;
-  height: 12px;
-  margin-right: 17px;
-  fill: transparent;
-  stroke: #696969;
-}
-
-.track__time-text {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: right;
-  color: #696969;
-}
-
-.track__author,
-.track__author-skeleton {
+const trackAuthor = css`
   width: 321px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,29 +90,78 @@
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-}
+`
 
-.track__author-skeleton {
+export const TrackAuthor = styled.div`
+  ${trackAuthor}
+`
+
+export const TrackAuthorSkeleton = styled.div`
+  ${trackAuthor}
   height: 1em;
   background-color: #313131;
-}
+`
 
-.track__author-link {
+export const TrackAuthorLink = styled.a`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #ffffff;
   text-align: left;
-}
+`
 
-.content__playlist {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow-y: auto;
-}
+export const TrackTitleLink = styled.a`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+`
+
+export const TrackTitleSpan = styled.span`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4e4e4e;
+`
+
+const trackAlbum = css`
+  width: 245px;
+`
+
+export const TrackAlbum = styled.div`
+  ${trackAlbum}
+`
+
+export const TrackAlbumSkeleton = styled.div`
+  ${trackAlbum}
+  height: 1em;
+  background-color: #313131;
+`
+
+export const TrackAlbumLink = styled.a`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #696969;
+`
+
+export const TrackTimeSvg = styled.svg`
+  width: 14px;
+  height: 12px;
+  margin-right: 17px;
+  fill: transparent;
+  stroke: #696969;
+`
+
+export const TrackTimeText = styled.span`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #696969;
+`

@@ -1,104 +1,100 @@
-import './PlayerBar.css'
 import iconSprite from '../../img/icon/sprite.svg'
 import React from 'react'
+import * as S from './styles'
 
 function PlayerBar(props) {
   return (
-    <div className="bar">
-      <div className="bar__content">
-        <div className="bar__player-progress"></div>
-        <div className="bar__player-block">
-          <div className="bar__player player">
-            <div className="player__controls">
-              <div className="player__btn-prev">
-                <svg className="player__btn-prev-svg" alt="prev">
+    <S.PlayerBar>
+      <S.PlayerBarContent>
+        <S.PlayerBarProgress />
+        <S.PlayerBarBlock>
+          <S.Player>
+            <S.PlayerControls>
+              <S.PlayerBtnPrev>
+                <S.PlayerBtnPrevSvg alt="prev">
                   <use xlinkHref={iconSprite + '#icon-prev'}></use>
-                </svg>
-              </div>
-              <div className="player__btn-play _btn">
-                <svg className="player__btn-play-svg" alt="play">
+                </S.PlayerBtnPrevSvg>
+              </S.PlayerBtnPrev>
+              <S.PlayerBtnPlay>
+                <S.PlayerBtnPlaySvg alt="play">
                   <use xlinkHref={iconSprite + '#icon-play'}></use>
-                </svg>
-              </div>
-              <div className="player__btn-next">
-                <svg className="player__btn-next-svg" alt="next">
+                </S.PlayerBtnPlaySvg>
+              </S.PlayerBtnPlay>
+              <S.PlayerBtnNext>
+                <S.PlayerBtnNextSvg alt="next">
                   <use xlinkHref={iconSprite + '#icon-next'}></use>
-                </svg>
-              </div>
-              <div className="player__btn-repeat _btn-icon">
-                <svg className="player__btn-repeat-svg" alt="repeat">
+                </S.PlayerBtnNextSvg>
+              </S.PlayerBtnNext>
+              <S.PlayerBtnRepeat>
+                <S.PlayerBtnRepeatSvg alt="repeat">
                   <use xlinkHref={iconSprite + '#icon-repeat'}></use>
-                </svg>
-              </div>
-              <div className="player__btn-shuffle _btn-icon">
-                <svg className="player__btn-shuffle-svg" alt="shuffle">
+                </S.PlayerBtnRepeatSvg>
+              </S.PlayerBtnRepeat>
+              <S.PlayerBtnShuffle>
+                <S.PlayerBtnShuffleSvg alt="shuffle">
                   <use xlinkHref={iconSprite + '#icon-shuffle'}></use>
-                </svg>
-              </div>
-            </div>
+                </S.PlayerBtnShuffleSvg>
+              </S.PlayerBtnShuffle>
+            </S.PlayerControls>
 
-            <div className="player__track-play track-play">
-              <div className="track-play__contain">
+            <S.PlayerTrack>
+              <S.PlayerTrackContain>
                 {props.isSkeletonVisible ? (
                   <React.Fragment>
-                    <div className="track-play__image-skeleton"></div>
-                    <div className="track-play__author-skeleton"></div>
-                    <div className="track-play__album-skeleton"></div>
+                    <S.TrackPlayImgSkeleton />
+                    <S.TrackPlayAuthorSkeleton />
+                    <S.TrackPlayAlbumSkeleton />
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <div className="track-play__image">
-                      <svg className="track-play__svg" alt="music">
+                    <S.TrackPlayImg>
+                      <S.TrackPlaySvg alt="music">
                         <use xlinkHref={iconSprite + '#icon-note'}></use>
-                      </svg>
-                    </div>
-                    <div className="track-play__author">
-                      <a className="track-play__author-link" href="http://">
+                      </S.TrackPlaySvg>
+                    </S.TrackPlayImg>
+                    <S.TrackPlayAuthor>
+                      <S.TrackPlayAuthorLink href="http://">
                         {props.title}
-                      </a>
-                    </div>
-                    <div className="track-play__album">
-                      <a className="track-play__album-link" href="http://">
+                      </S.TrackPlayAuthorLink>
+                    </S.TrackPlayAuthor>
+                    <S.TrackPlayAlbum>
+                      <S.TrackPlayAlbumLink href="http://">
                         {props.author}
-                      </a>
-                    </div>
+                      </S.TrackPlayAlbumLink>
+                    </S.TrackPlayAlbum>
                   </React.Fragment>
                 )}
-              </div>
+              </S.PlayerTrackContain>
 
-              <div className="track-play__like-dis">
-                <div className="track-play__like _btn-icon">
-                  <svg className="track-play__like-svg" alt="like">
+              <S.TrackPlayReactions>
+                <S.TrackPlayReactionsLike>
+                  <S.TrackPlayReactionsLikeSvg alt="like">
                     <use xlinkHref={iconSprite + '#icon-like'}></use>
-                  </svg>
-                </div>
-                <div className="track-play__dislike _btn-icon">
-                  <svg className="track-play__dislike-svg" alt="dislike">
+                  </S.TrackPlayReactionsLikeSvg>
+                </S.TrackPlayReactionsLike>
+                <S.TrackPlayReactionsDislike>
+                  <S.TrackPlayReactionsDisLikeSvg alt="dislike">
                     <use xlinkHref={iconSprite + '#icon-dislike'}></use>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bar__volume-block volume">
-            <div className="volume__content">
-              <div className="volume__image">
-                <svg className="volume__svg" alt="volume">
+                  </S.TrackPlayReactionsDisLikeSvg>
+                </S.TrackPlayReactionsDislike>
+              </S.TrackPlayReactions>
+            </S.PlayerTrack>
+          </S.Player>
+          <S.PlayerBarVolumeBlock>
+            <S.Volume>
+              <S.VolumeImg>
+                <S.VolumeImgSvg alt="volume">
                   <use xlinkHref={iconSprite + '#icon-volume'}></use>
-                </svg>
-              </div>
-              <div className="volume__progress _btn">
-                <input
-                  className="volume__progress-line _btn"
-                  type="range"
-                  name="range"
-                ></input>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                </S.VolumeImgSvg>
+              </S.VolumeImg>
+              <S.VolumeProgress>
+                <S.VolumeProgressLine type="range" name="range" />
+              </S.VolumeProgress>
+            </S.Volume>
+          </S.PlayerBarVolumeBlock>
+        </S.PlayerBarBlock>
+      </S.PlayerBarContent>
+    </S.PlayerBar>
   )
 }
 

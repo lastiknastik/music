@@ -1,22 +1,22 @@
-import './Content.css'
 import iconSprite from '../../img/icon/sprite.svg'
 import Playlist from '../Playlist/Playlist'
+import * as S from './styles'
 
 function Content(props) {
   return (
-    <div className="centerblock__content">
-      <div className="content__title playlist-title">
-        <div className="playlist-title__col col01">Трек</div>
-        <div className="playlist-title__col col02">ИСПОЛНИТЕЛЬ</div>
-        <div className="playlist-title__col col03">АЛЬБОМ</div>
-        <div className="playlist-title__col col04">
-          <svg className="playlist-title__svg" alt="time">
+    <S.TracksList>
+      <S.TracksListTitle>
+        <S.TracksListTitleCol colNum="col01">Трек</S.TracksListTitleCol>
+        <S.TracksListTitleCol colNum="col02">ИСПОЛНИТЕЛЬ</S.TracksListTitleCol>
+        <S.TracksListTitleCol colNum="col03">АЛЬБОМ</S.TracksListTitleCol>
+        <S.TracksListTitleCol colNum="col04">
+          <S.TracksListTimeIcon alt="time">
             <use xlinkHref={iconSprite + '#icon-watch'}></use>
-          </svg>
-        </div>
-      </div>
+          </S.TracksListTimeIcon>
+        </S.TracksListTitleCol>
+      </S.TracksListTitle>
       <Playlist isSkeletonVisible={props.isSkeletonVisible} />
-    </div>
+    </S.TracksList>
   )
 }
 

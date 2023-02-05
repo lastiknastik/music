@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ListFilter from './ListFilter/ListFilter'
 import RadioFilter from './RadioFilter/RadioFilter'
-import './MainTracksFilter.css'
+import * as S from './style'
 
 function MainTracksFilter() {
   const [filter, setFilter] = useState({
@@ -49,39 +49,36 @@ function MainTracksFilter() {
   }
 
   return (
-    <div className="centerblock__filter filter" onClick={onClickHandler}>
-      <div className="filter__title">Искать по:</div>
-      <div
-        className={`filter__button button-author _btn-text ${
-          filter.isPerformerFilter ? '_btn-active' : ''
-        }`}
+    <S.TracksFilter onClick={onClickHandler}>
+      <S.TracksFilterTitle>Искать по:</S.TracksFilterTitle>
+      <S.TracksFilterButton
+        btnActive={filter.isPerformerFilter}
+        className={`button-author filter__button`}
       >
         исполнителю
-      </div>
+      </S.TracksFilterButton>
       {filter.isPerformerFilter && (
         <ListFilter type={'author'} top={filter.top} left={filter.left} />
       )}
-      <div
-        className={`filter__button button-year _btn-text ${
-          filter.isYearFilter ? '_btn-active' : ''
-        }`}
+      <S.TracksFilterButton
+        btnActive={filter.isYearFilter}
+        className={`button-year filter__button`}
       >
         году выпуска
-      </div>
+      </S.TracksFilterButton>
       {filter.isYearFilter && (
         <RadioFilter type={'year'} top={filter.top} left={filter.left} />
       )}
-      <div
-        className={`filter__button button-genre _btn-text ${
-          filter.isGenreFilter ? '_btn-active' : ''
-        }`}
+      <S.TracksFilterButton
+        btnActive={filter.isGenreFilter}
+        className={`button-genre filter__button`}
       >
         жанру
-      </div>
+      </S.TracksFilterButton>
       {filter.isGenreFilter && (
         <ListFilter type={'genre'} top={filter.top} left={filter.left} />
       )}
-    </div>
+    </S.TracksFilter>
   )
 }
 

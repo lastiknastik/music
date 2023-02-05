@@ -1,6 +1,6 @@
-import './MainNav.css'
 import { useState } from 'react'
 import logo from '../../img/logo.png'
+import * as S from './styles'
 
 function MainNav() {
   const [isMenuVisible, toggleVisibility] = useState(false)
@@ -10,37 +10,31 @@ function MainNav() {
   }
 
   return (
-    <nav className="main__nav nav">
-      <div className="nav__logo logo">
-        <img className="logo__image" src={logo} alt="logo"></img>
-      </div>
-      <div className="nav__burger burger" onClick={handleBurgerClick}>
-        <span className="burger__line"></span>
-        <span className="burger__line"></span>
-        <span className="burger__line"></span>
-      </div>
+    <S.MainNav>
+      <S.NavLogo>
+        <S.LogoImg src={logo} alt="logo" />
+      </S.NavLogo>
+      <S.NavBurger onClick={handleBurgerClick}>
+        <S.NavBurgerLine />
+        <S.NavBurgerLine />
+        <S.NavBurgerLine />
+      </S.NavBurger>
       {isMenuVisible && (
-        <div className="nav__menu menu">
-          <ul className="menu__list">
-            <li className="menu__item">
-              <a href="http://" className="menu__link">
-                Главное
-              </a>
-            </li>
-            <li className="menu__item">
-              <a href="http://" className="menu__link">
-                Мой плейлист
-              </a>
-            </li>
-            <li className="menu__item">
-              <a href="http://" className="menu__link">
-                Войти
-              </a>
-            </li>
-          </ul>
-        </div>
+        <S.NavMenu>
+          <S.MenuList>
+            <S.MenuItem>
+              <S.MenuLink href="http://">Главное</S.MenuLink>
+            </S.MenuItem>
+            <S.MenuItem>
+              <S.MenuLink href="http://">Мой плейлист</S.MenuLink>
+            </S.MenuItem>
+            <S.MenuItem>
+              <S.MenuLink href="http://">Войти</S.MenuLink>
+            </S.MenuItem>
+          </S.MenuList>
+        </S.NavMenu>
       )}
-    </nav>
+    </S.MainNav>
   )
 }
 
