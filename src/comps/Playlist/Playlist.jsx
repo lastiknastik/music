@@ -1,55 +1,53 @@
-import './Playlist.css'
 import iconSprite from '../../img/icon/sprite.svg'
 import React from 'react'
+import * as S from './styles'
 
 function PlaylistItem(props) {
   return (
-    <div className="playlist__item">
-      <div className="playlist__track track">
+    <S.PlaylistItem>
+      <S.Track>
         {props.isSkeletonVisible ? (
           <React.Fragment>
-            <div className="track__title">
-              <div className="track__title-image-skeleton"></div>
-              <div className="track__title-text-skeleton"></div>
-            </div>
-            <div className="track__author-skeleton"></div>
-            <div className="track__album-skeleton"></div>
+            <S.TrackTitle>
+              <S.TrackTitleImgSkeleton />
+              <S.TrackTitleTextSkeleton />
+            </S.TrackTitle>
+            <S.TrackAuthorSkeleton />
+            <S.TrackAlbumSkeleton />
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <div className="track__title">
-              <div className="track__title-image">
-                <svg className="track__title-svg" alt="music">
+            <S.TrackTitle>
+              <S.TrackTitleImg>
+                <S.TrackTitleSvg alt="music">
                   <use xlinkHref={iconSprite + '#icon-note'}></use>
-                </svg>
-              </div>
-              <div className="track__title-text">
-                <a className="track__title-link" href="http://">
+                </S.TrackTitleSvg>
+              </S.TrackTitleImg>
+              <div>
+                <S.TrackTitleLink href="http://">
                   {props.title}
-                  <span className="track__title-span">{props.titleSpan}</span>
-                </a>
+                  <S.TrackTitleSpan>{props.titleSpan}</S.TrackTitleSpan>
+                </S.TrackTitleLink>
               </div>
-            </div>
-            <div className="track__author">
-              <a className="track__author-link" href="http://">
+            </S.TrackTitle>
+            <S.TrackAuthor>
+              <S.TrackAuthorLink href="http://">
                 {props.author}
-              </a>
-            </div>
-            <div className="track__album">
-              <a className="track__album-link" href="http://">
-                {props.albom}
-              </a>
-            </div>
-            <div className="track__time">
-              <svg className="track__time-svg" alt="time">
+              </S.TrackAuthorLink>
+            </S.TrackAuthor>
+            <S.TrackAlbum>
+              <S.TrackAlbumLink href="http://">{props.albom}</S.TrackAlbumLink>
+            </S.TrackAlbum>
+            <div>
+              <S.TrackTimeSvg alt="time">
                 <use xlinkHref={iconSprite + 'icon-like'}></use>
-              </svg>
-              <span className="track__time-text">{props.time}</span>
+              </S.TrackTimeSvg>
+              <S.TrackTimeText>{props.time}</S.TrackTimeText>
             </div>
           </React.Fragment>
         )}
-      </div>
-    </div>
+      </S.Track>
+    </S.PlaylistItem>
   )
 }
 
@@ -120,7 +118,7 @@ function Playlist(props) {
   let i = 0
 
   return (
-    <div className="content__playlist playlist">
+    <S.Playlist>
       {tracks.map((track) => (
         <PlaylistItem
           key={i++}
@@ -128,7 +126,7 @@ function Playlist(props) {
           isSkeletonVisible={props.isSkeletonVisible}
         />
       ))}
-    </div>
+    </S.Playlist>
   )
 }
 

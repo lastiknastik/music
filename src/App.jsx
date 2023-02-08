@@ -1,4 +1,3 @@
-import './App.css'
 import MainNav from './comps/MainNav/MainNav'
 import MainSearch from './comps/MainSearch/MainSearch'
 import MainTracksFilter from './comps/MainTracksFilter/MainTracksFilter'
@@ -6,6 +5,7 @@ import Content from './comps/Content/Content'
 import Sidebar from './comps/Sidebar/Sidebar'
 import PlayerBar from './comps/PlayerBar/PlayerBar'
 import { useState } from 'react'
+import * as S from './styles'
 
 function App(props) {
   const [isSkeletonVisible, toggleSkeletonVisibility] = useState(props.loaded)
@@ -16,26 +16,27 @@ function App(props) {
   }, 5000)
 
   return (
-    <div className="wrapper">
-      <div className="container">
-        <main className="main">
+    <S.Wrapper>
+      <S.GlobalStyle />
+      <S.Container>
+        <S.Main>
           <MainNav />
-          <div className="main__centerblock centerblock">
+          <S.MainCenterblock>
             <MainSearch />
-            <h2 className="centerblock__h2">Треки</h2>
+            <S.CenterblockH2>Треки</S.CenterblockH2>
             <MainTracksFilter />
             <Content isSkeletonVisible={isSkeletonVisible} />
-          </div>
+          </S.MainCenterblock>
           <Sidebar name="Sergey.Ivanov" isSkeletonVisible={isSkeletonVisible} />
-        </main>
+        </S.Main>
         <PlayerBar
           title="Ты та..."
           author="Баста"
           isSkeletonVisible={isSkeletonVisible}
         />
-        <footer className="footer"></footer>
-      </div>
-    </div>
+        <footer></footer>
+      </S.Container>
+    </S.Wrapper>
   )
 }
 

@@ -1,4 +1,4 @@
-import './RadioFilter.css'
+import * as S from './styles.js'
 
 function RadioFilter(props) {
   //stub
@@ -11,25 +11,23 @@ function RadioFilter(props) {
     ]
   }
 
-  const elementPosition = { top: props.top, left: props.left }
-
   let i = 0
 
   return (
-    <div className="filter__button-radio" style={elementPosition}>
+    <S.RadioFilter top={props.top} left={props.left}>
       {data.map((item) => (
-        <div className="filter__button-radio-item" key={i++}>
-          <input
+        <S.RadioFilterItem key={i++}>
+          <S.RadioFilterItemInput
             type="radio"
             id={item.id}
             name={item.name}
             value={item.id}
             defaultChecked={item.id === 'newer' ? 'true' : ''}
-          ></input>
+          ></S.RadioFilterItemInput>
           <label htmlFor={item.id}>{item.label}</label>
-        </div>
+        </S.RadioFilterItem>
       ))}
-    </div>
+    </S.RadioFilter>
   )
 }
 
