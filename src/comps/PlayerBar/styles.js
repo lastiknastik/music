@@ -9,12 +9,7 @@ export const PlayerBar = styled.div`
   background: rgba(28, 28, 28, 0.5);
 `
 export const PlayerBarContent = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 `
 export const PlayerBarProgress = styled.div`
@@ -25,68 +20,34 @@ export const PlayerBarProgress = styled.div`
 
 export const PlayerBarBlock = styled.div`
   height: 73px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 `
 export const Player = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 `
 
 export const PlayerBarVolumeBlock = styled.div`
   width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 0 92px 0 0;
 `
 
 export const PlayerControls = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 0 27px 0 31px;
 `
 
 export const Volume = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: end;
 `
 
@@ -110,11 +71,7 @@ export const VolumeProgressLine = styled.input`
 `
 const button = css`
   padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 `
 
@@ -163,20 +120,11 @@ const trackPlayImg = css`
   width: 51px;
   height: 51px;
   background-color: #313131;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-right: 12px;
-  -ms-grid-row: 1;
   grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
   grid-column: 1;
   grid-area: image;
 `
@@ -234,11 +182,7 @@ export const PlayerBtnRepeat = styled.div`
 export const PlayerBtnShuffle = styled.div`
   ${buttonIcon}
   ${button}
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 `
 
@@ -249,24 +193,15 @@ export const PlayerBtnShuffleSvg = styled.svg`
   stroke: #696969;
 `
 export const PlayerTrack = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
 `
 
 export const PlayerTrackContain = styled.div`
   width: auto;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr;
   grid-template-columns: auto 1fr;
   grid-template-areas: 'image author' 'image album';
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 `
 
@@ -288,9 +223,7 @@ export const TrackPlaySvg = styled.svg`
 `
 
 export const TrackPlayAuthor = styled.div`
-  -ms-grid-row: 1;
   grid-row: 1;
-  -ms-grid-column: 2;
   grid-column: 2;
   grid-area: author;
   min-width: 49px;
@@ -320,15 +253,8 @@ export const TrackPlayAlbumLink = styled.a`
   color: #ffffff;
 `
 export const TrackPlayReactions = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-left: 26%;
 `

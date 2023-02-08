@@ -3,10 +3,10 @@ import logo from '../../img/logo.png'
 import * as S from './styles'
 
 function MainNav() {
-  const [isMenuVisible, toggleVisibility] = useState(false)
+  const [isMenuVisible, setMenuVisibility] = useState(false)
 
   const handleBurgerClick = () => {
-    toggleVisibility(!isMenuVisible)
+    setMenuVisibility((prev) => !prev)
   }
 
   return (
