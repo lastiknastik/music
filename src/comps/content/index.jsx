@@ -1,5 +1,5 @@
 import iconSprite from '../../img/icon/sprite.svg'
-import Playlist from '../Playlist/Playlist'
+import Playlist from '../playlist'
 import * as S from './styles'
 
 function Content(props) {
@@ -15,7 +15,10 @@ function Content(props) {
           </S.TracksListTimeIcon>
         </S.TracksListTitleCol>
       </S.TracksListTitle>
-      <Playlist isSkeletonVisible={props.isSkeletonVisible} />
+      <Playlist
+        isSkeletonVisible={props.isSkeletonVisible}
+        tracksList={props.tracksList}
+      />
     </S.TracksList>
   )
 }

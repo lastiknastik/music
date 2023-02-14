@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import logo from '../../img/logo.png'
 import * as S from './styles'
+import logo from '../../img/logo.png'
+import ImageLogo from '../image-logo'
+import { Link } from 'react-router-dom'
 
 function MainNav() {
   const [isMenuVisible, setMenuVisibility] = useState(false)
@@ -12,7 +14,7 @@ function MainNav() {
   return (
     <S.MainNav>
       <S.NavLogo>
-        <S.LogoImg src={logo} alt="logo" />
+        <ImageLogo src={logo} width="113.33px" height="17px" />
       </S.NavLogo>
       <S.NavBurger onClick={handleBurgerClick}>
         <S.NavBurgerLine />
@@ -23,13 +25,13 @@ function MainNav() {
         <S.NavMenu>
           <S.MenuList>
             <S.MenuItem>
-              <S.MenuLink href="http://">Главное</S.MenuLink>
+              <S.MenuLink to="/">Главное</S.MenuLink>
             </S.MenuItem>
             <S.MenuItem>
-              <S.MenuLink href="http://">Мой плейлист</S.MenuLink>
+              <S.MenuLink to="/mytracks">Мои треки</S.MenuLink>
             </S.MenuItem>
             <S.MenuItem>
-              <S.MenuLink href="http://">Войти</S.MenuLink>
+              <S.MenuLink href="http://">Выйти</S.MenuLink>
             </S.MenuItem>
           </S.MenuList>
         </S.NavMenu>

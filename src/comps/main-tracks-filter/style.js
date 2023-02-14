@@ -45,4 +45,5 @@ export const TracksFilter = styled.div`
   flex-direction: row;
   align-items: center;
   margin-bottom: 51px;
+  gap: 10px;
 `
