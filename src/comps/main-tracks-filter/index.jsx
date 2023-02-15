@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ListFilter from './ListFilter/ListFilter'
-import RadioFilter from './RadioFilter/RadioFilter'
+import ListFilter from './list-filter'
+import RadioFilter from './radio-filter'
 import * as S from './style'
 
 function MainTracksFilter() {

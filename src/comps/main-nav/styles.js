@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { btn } from '../../styles'
+import { Link } from 'react-router-dom'
 
 export const MainNav = styled.nav`
   width: 244px;
@@ -26,11 +27,6 @@ export const NavBurgerLine = styled.span`
   background-color: #d3d3d3;
 `
 
-export const LogoImg = styled.img`
-  width: 113.33px;
-  height: 17px;
-  color: #181818;
-`
 export const NavLogo = styled.div`
   width: 113.33px;
   height: 43px;
@@ -53,7 +49,7 @@ export const MenuItem = styled.li`
   margin-bottom: 16px;
 `
 
-export const MenuLink = styled.a`
+export const MenuLink = styled(Link)`
   color: #ffffff;
   font-weight: 400;
   font-size: 16px;

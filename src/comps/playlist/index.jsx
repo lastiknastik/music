@@ -1,6 +1,7 @@
 import iconSprite from '../../img/icon/sprite.svg'
 import React from 'react'
 import * as S from './styles'
+import { TRACKS } from '../../constants'
 
 function PlaylistItem(props) {
   return (
@@ -52,76 +53,11 @@ function PlaylistItem(props) {
 }
 
 function Playlist(props) {
-  const tracks = [
-    { title: 'Guilt', author: 'Nero', albom: 'Welcome Reality', time: '4:44' },
-    {
-      title: 'Elektro',
-      author: 'Dynoro, Outwork, Mr. Gee',
-      albom: 'Elektro',
-      time: '2:22',
-    },
-    {
-      title: 'I’m Fire ',
-      titleSpan: '(Remix)',
-      author: 'Ali Bakgor',
-      albom: 'I’m Fire',
-      time: '2:22',
-    },
-    {
-      title: 'Non Stop ',
-      titleSpan: '(Remix)',
-      author: 'Стоункат, Psychopath',
-      albom: 'Non Stop',
-      time: '4:12',
-    },
-    {
-      title: 'Run Run ',
-      titleSpan: '(feat. AR/CO)',
-      author: 'Jaded, Will Clarke, AR/CO',
-      albom: 'Run Run',
-      time: '2:54',
-    },
-    {
-      title: 'Eyes on Fire ',
-      titleSpan: '(Zeds Dead Remix)',
-      author: 'Blue Foundation, Zeds Dead',
-      albom: 'Eyes on Fire',
-      time: '5:20',
-    },
-    {
-      title: 'Mucho Bien ',
-      titleSpan: '(Hi Profile Remix)',
-      author: 'HYBIT, Mr. Black, Offer Nissim, Hi Profile',
-      albom: 'Mucho Bien',
-      time: '3:41',
-    },
-    {
-      title: 'Knives n Cherries ',
-      author: 'minthaze',
-      albom: 'Captivating',
-      time: '1:48',
-    },
-    {
-      title: 'How Deep Is Your Love',
-      author: 'Calvin Harris, Disciples',
-      albom: 'How Deep Is Your Love',
-      time: '3:32',
-    },
-    {
-      title: 'Morena',
-      author: 'Tom Boxer',
-      albom: 'Soundz Made in Romania',
-      time: '3:36',
-    },
-  ]
-
-  let i = 0
-
   return (
     <S.Playlist>
-      {tracks.map((track) => (
+      {props.tracksList.map((track) => (
         <PlaylistItem
-          key={i++}
+          key={track.id}
           {...track}
           isSkeletonVisible={props.isSkeletonVisible}
         />
