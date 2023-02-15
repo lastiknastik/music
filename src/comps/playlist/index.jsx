@@ -1,7 +1,6 @@
 import iconSprite from '../../img/icon/sprite.svg'
 import React from 'react'
 import * as S from './styles'
-import { TRACKS } from '../../constants'
 
 function PlaylistItem(props) {
   return (
