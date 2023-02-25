@@ -69,14 +69,15 @@ body {
   color: #ffffff;
 }
 
+
 @font-face {
-    font-family: 'StratosSkyeng';
-    src: local('StratosSkyeng'), local('StratosSkyeng'),
-      url('../public/fonts/StratosSkyeng.woff2') format('woff2'),
-      url('../public/fonts/StratosSkyeng.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'StratosSkyeng';
+  src: local('StratosSkyeng');
+  src: url('../public/fonts/StratosSkyeng.woff') format('woff2');
+  font-weight: 400;
+  font-style: normal;
 }
+
 
 button{
   cursor: pointer;

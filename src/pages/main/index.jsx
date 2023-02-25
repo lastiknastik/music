@@ -32,11 +32,7 @@ export default function Main() {
           <SidebarPlaylists isSkeletonVisible={isSkeletonVisible} />
         </Sidebar>
       </S.Main>
-      <PlayerBar
-        title="Ты та..."
-        author="Баста"
-        isSkeletonVisible={isSkeletonVisible}
-      />
+      <PlayerBar trackId="12" isSkeletonVisible={isSkeletonVisible} />
       <footer></footer>
     </React.Fragment>
   )

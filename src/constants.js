@@ -1,6 +1,7 @@
 import playlist01 from './img/playlist01.png'
 import playlist02 from './img/playlist02.png'
 import playlist03 from './img/playlist03.png'
+import trackForDemo from './music/Bobby_Marleni_-_Dropin.mp3'
 
 export const TRACKS = [
   {
@@ -77,6 +78,21 @@ export const TRACKS = [
     author: 'Tom Boxer',
     albom: 'Soundz Made in Romania',
     time: '3:36',
+  },
+  {
+    id: 11,
+    title: 'Ты та...',
+    author: 'Баста',
+    albom: 'Баста 1',
+    time: '3:36',
+  },
+  {
+    id: 12,
+    title: "Dropin'",
+    author: 'Bobby Marleni',
+    albom: 'Defected Jamz',
+    time: '3:36',
+    src: trackForDemo,
   },
 ]
 
