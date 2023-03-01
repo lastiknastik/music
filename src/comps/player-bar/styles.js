@@ -6,17 +6,19 @@ export const PlayerBar = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(28, 28, 28, 0.5);
 `
 export const PlayerBarContent = styled.div`
   display: flex;
   flex-direction: column;
+  background: rgba(28, 28, 28, 0.5);
 `
+
+/*
 export const PlayerBarProgress = styled.div`
   width: 100%;
   height: 5px;
-  background: #2e2e2e;
 `
+*/
 
 export const PlayerBarBlock = styled.div`
   height: 73px;
@@ -94,7 +96,8 @@ export const PlayerBtnPlay = styled.div`
 export const PlayerBtnPlaySvg = styled.svg`
   width: 22px;
   height: 20px;
-  fill: #d9d9d9;
+  /* fill: #d9d9d9; */
+  fill: inherit;
 `
 
 export const PlayerBtnNext = styled.div`
