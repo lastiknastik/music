@@ -8,7 +8,7 @@ export const RadioFilterItemInput = styled.input`
     color: currentColor;
     width: 18px;
     height: 18px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--text-color);
     border-radius: 50%;
     transform: translateY(3px);
     display: grid;
@@ -20,7 +20,7 @@ export const RadioFilterItemInput = styled.input`
     height: 10.8px;
     border-radius: 50%;
     transform: scale(0);
-    background-color: #ffffff;
+    background-color: var(--text-color);
   }
   & :checked::before {
     transform: scale(1);
@@ -40,7 +40,7 @@ export const RadioFilter = styled.div`
   height: 92px;
   border-radius: 12px;
   padding: 34px;
-  background: #313131;
+  background: var(--track-title-bgcolor);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -4,14 +4,31 @@ import React from 'react'
 import * as S from './styles'
 import { TRACKS } from '../../constants'
 import PlayerProgressBar from '../player-progress-bar'
+import TrackCover from '../track-cover'
+import { useThemeContext } from '../../context-consumers/contexts/theme'
 
 function PlayerBar(props) {
+  const { theme } = useThemeContext()
+
   const track = TRACKS.find((t) => t.id === Number(props.trackId)) //hardcoded value
 
   const audioRef = useRef(null)
-  //const progressBarRef = useRef(null)
 
   const [isPlaying, setIsPlaying] = useState(false)
+
+  function getCurrentVolume(target) {
+    const min = target.min
+    const max = target.max
+    const val = target.value
+
+    return ((val - min) * 100) / (max - min)
+  }
+
+  function onVolurmeInputHandler(e) {
+    const target = e.target
+
+    target.style.backgroundSize = getCurrentVolume(target) + '% 100%'
+  }
 
   function btnPlayClickHandler(e) {
     if (isPlaying) {
@@ -24,30 +41,11 @@ function PlayerBar(props) {
     })
   }
 
-  /*
-  let progress = 0
-  function audioTimeUpdateHandler(e) {
-    const audio = e.target
-    progress = (audio.currentTime / audio.duration) * 100
-
-    progressBarRef.current.style.background = `linear-gradient(to right, #b672ff ${progress}%, ${
-      PROGRESSBAR_BACKGROUND_COLOR + ' ' + progress
-    }%)`
-  }
-  */
-
   return (
     <S.PlayerBar>
       <PlayerProgressBar props={audioRef} />
       <S.PlayerBarContent>
         <audio src={track.src} ref={audioRef} />
-        {/*
-  <S.PlayerBarProgress
-          ref={progressBarRef}
-          style={{ background: PROGRESSBAR_BACKGROUND_COLOR }}
-        />
-   */}
-
         <S.PlayerBarBlock>
           <S.Player>
             <S.PlayerControls>
@@ -86,27 +84,25 @@ function PlayerBar(props) {
               <S.PlayerTrackContain>
                 {props.isSkeletonVisible ? (
                   <React.Fragment>
-                    <S.TrackPlayImgSkeleton />
+                    <TrackCover isSkeletonVisible={props.isSkeletonVisible} />
                     <S.TrackPlayAuthorSkeleton />
                     <S.TrackPlayAlbumSkeleton />
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <S.TrackPlayImg>
-                      <S.TrackPlaySvg alt="music">
-                        <use xlinkHref={iconSprite + '#icon-note'}></use>
-                      </S.TrackPlaySvg>
-                    </S.TrackPlayImg>
-                    <S.TrackPlayAuthor>
-                      <S.TrackPlayAuthorLink href="http://">
-                        {track.title}
-                      </S.TrackPlayAuthorLink>
-                    </S.TrackPlayAuthor>
-                    <S.TrackPlayAlbum>
-                      <S.TrackPlayAlbumLink href="http://">
-                        {track.author}
-                      </S.TrackPlayAlbumLink>
-                    </S.TrackPlayAlbum>
+                    <TrackCover isSkeletonVisible={props.isSkeletonVisible} />
+                    <div>
+                      <S.TrackPlayAuthor>
+                        <S.TrackPlayAuthorLink href="http://">
+                          {track.title}
+                        </S.TrackPlayAuthorLink>
+                      </S.TrackPlayAuthor>
+                      <S.TrackPlayAlbum>
+                        <S.TrackPlayAlbumLink href="http://">
+                          {track.author}
+                        </S.TrackPlayAlbumLink>
+                      </S.TrackPlayAlbum>
+                    </div>
                   </React.Fragment>
                 )}
               </S.PlayerTrackContain>
@@ -129,11 +125,18 @@ function PlayerBar(props) {
             <S.Volume>
               <S.VolumeImg>
                 <S.VolumeImgSvg alt="volume">
-                  <use xlinkHref={iconSprite + '#icon-volume'}></use>
+                  <use xlinkHref={iconSprite + theme.icons.volume}></use>
                 </S.VolumeImgSvg>
               </S.VolumeImg>
               <S.VolumeProgress>
-                <S.VolumeProgressLine type="range" name="range" />
+                <S.VolumeProgressLine
+                  min="0"
+                  max="100"
+                  volume="50"
+                  type="range"
+                  name="range"
+                  onInput={onVolurmeInputHandler}
+                />
               </S.VolumeProgress>
             </S.Volume>
           </S.PlayerBarVolumeBlock>

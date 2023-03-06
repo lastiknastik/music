@@ -18,7 +18,7 @@ const sidebarItem = css`
 `
 export const SidebarItemSkeleton = styled.div`
   ${sidebarItem}
-  background-color: #313131;
+  background-color: var(--track-title-bgcolor);
   margin-bottom: 30px;
 `
 
