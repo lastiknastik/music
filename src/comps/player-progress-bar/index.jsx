@@ -2,7 +2,7 @@ import { useState } from 'react'
 import React from 'react'
 import * as S from './styles'
 
-const PROGRESSBAR_BACKGROUND_COLOR = '#2e2e2e'
+const PROGRESSBAR_BGCOLOR = 'var(--progressbar-bgcolor)'
 
 export default function PlayerProgressBar(props) {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -69,9 +69,9 @@ export default function PlayerProgressBar(props) {
         style={{
           background: isPlaying
             ? `linear-gradient(to right, #b672ff ${progress.progressPc}%, ${
-                PROGRESSBAR_BACKGROUND_COLOR + ' ' + progress.progressPc
+                PROGRESSBAR_BGCOLOR + ' ' + progress.progressPc
               }%)`
-            : PROGRESSBAR_BACKGROUND_COLOR,
+            : PROGRESSBAR_BGCOLOR,
           height: isHover ? '10px' : '5px',
         }}
         onMouseEnter={onMouseEnterHandler}

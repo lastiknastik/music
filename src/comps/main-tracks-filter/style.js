@@ -14,7 +14,7 @@ export const TracksFilterButton = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--filter-btn-regular);
     border-radius: 60px;
     padding: 6px 20px;
     user-select: none;
@@ -23,12 +23,12 @@ export const TracksFilterButton = styled.div`
   & :not(:last-child) {
     margin-right: 10px;
   }
-  & :hover {
-    border-color: #d9b6ff;
-    color: #d9b6ff;
+  &:hover {
+    border-color: var(--filter-btn-hover);
+    color: var(--filter-btn-hover);
     cursor: pointer;
   }
-  & :active {
+  &:active {
     ${buttonActive}
   }
 `

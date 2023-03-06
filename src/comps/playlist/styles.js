@@ -25,32 +25,8 @@ export const TrackTitle = styled.div`
   width: 447px;
 `
 
-const trackTitleImg = css`
-  width: 51px;
-  height: 51px;
-  padding: 16px;
-  background: #313131;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 17px;
-`
-
-export const TrackTitleImg = styled.div`
-  ${trackTitleImg}
-`
-export const TrackTitleImgSkeleton = styled.div`
-  ${trackTitleImg}
-`
-export const TrackTitleSvg = styled.svg`
-  width: 18px;
-  height: 17px;
-  fill: transparent;
-  stroke: #4e4e4e;
-`
-
 export const TrackTitleTextSkeleton = styled.div`
-  background-color: #313131;
+  background-color: var(--track-title-bgcolor);
   width: 100%;
   height: 1em;
 `
@@ -68,7 +44,7 @@ export const TrackAuthor = styled.div`
 export const TrackAuthorSkeleton = styled.div`
   ${trackAuthor}
   height: 1em;
-  background-color: #313131;
+  background-color: var(--track-title-bgcolor);
 `
 
 export const TrackAuthorLink = styled.a`
@@ -76,7 +52,7 @@ export const TrackAuthorLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--text-color);
   text-align: left;
 `
 
@@ -85,7 +61,7 @@ export const TrackTitleLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--text-color);
 `
 
 export const TrackTitleSpan = styled.span`
@@ -107,7 +83,7 @@ export const TrackAlbum = styled.div`
 export const TrackAlbumSkeleton = styled.div`
   ${trackAlbum}
   height: 1em;
-  background-color: #313131;
+  background-color: var(--track-title-bgcolor);
 `
 
 export const TrackAlbumLink = styled.a`

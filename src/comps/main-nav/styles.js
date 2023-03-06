@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export const MainNav = styled.nav`
   width: 244px;
-  background-color: #181818;
+  background-color: var(--sidebar-bgcolor);
   padding: 20px 0 20px 36px;
 `
 
@@ -24,7 +24,7 @@ export const NavBurgerLine = styled.span`
   display: inline-block;
   width: 100%;
   height: 1px;
-  background-color: #d3d3d3;
+  background-color: var(--mainnav-line-color);
 `
 
 export const NavLogo = styled.div`
@@ -50,8 +50,16 @@ export const MenuItem = styled.li`
 `
 
 export const MenuLink = styled(Link)`
-  color: #ffffff;
+  color: var(--text-color);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+`
+
+export const MenuItemTheme = styled.svg`
+  ${btn}
+  width: 39px;
+  height: 39px;
+  fill: transparent;
+  /* stroke: #696969; */
 `
