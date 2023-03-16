@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import * as S from './styles'
-import logo from '../../img/logo.png'
 import ImageLogo from '../image-logo'
-import { Link } from 'react-router-dom'
+import iconSprite from '../../img/icon/sprite.svg'
+import { useThemeContext } from '../../context-consumers/contexts/theme'
 
 function MainNav() {
   const [isMenuVisible, setMenuVisibility] = useState(false)
+
+  const { theme, toggleTheme } = useThemeContext()
 
   const handleBurgerClick = () => {
     setMenuVisibility((prev) => !prev)
@@ -14,7 +16,7 @@ function MainNav() {
   return (
     <S.MainNav>
       <S.NavLogo>
-        <ImageLogo src={logo} width="113.33px" height="17px" />
+        <ImageLogo src={theme.icons.logo} width="113.33px" height="17px" />
       </S.NavLogo>
       <S.NavBurger onClick={handleBurgerClick}>
         <S.NavBurgerLine />
@@ -32,6 +34,11 @@ function MainNav() {
             </S.MenuItem>
             <S.MenuItem>
               <S.MenuLink href="http://">Выйти</S.MenuLink>
+            </S.MenuItem>
+            <S.MenuItem>
+              <S.MenuItemTheme onClick={toggleTheme}>
+                <use xlinkHref={iconSprite + theme.icons['theme-change']}></use>
+              </S.MenuItemTheme>
             </S.MenuItem>
           </S.MenuList>
         </S.NavMenu>

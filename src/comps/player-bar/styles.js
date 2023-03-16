@@ -10,15 +10,8 @@ export const PlayerBar = styled.div`
 export const PlayerBarContent = styled.div`
   display: flex;
   flex-direction: column;
-  background: rgba(28, 28, 28, 0.5);
+  background: var(--main-bgcolor) /* rgba(28, 28, 28, 0.5)*/;
 `
-
-/*
-export const PlayerBarProgress = styled.div`
-  width: 100%;
-  height: 5px;
-`
-*/
 
 export const PlayerBarBlock = styled.div`
   height: 73px;
@@ -54,27 +47,96 @@ export const Volume = styled.div`
 `
 
 export const VolumeImg = styled.div`
-  width: 13px;
+  width: 15px;
   height: 18px;
   margin-right: 17px;
 `
 export const VolumeImgSvg = styled.svg`
-  width: 13px;
+  width: 15px;
   height: 18px;
   fill: transparent;
 `
 export const VolumeProgress = styled.div`
   width: 109px;
+  display: flex;
   ${btn}
 `
 export const VolumeProgressLine = styled.input`
   width: 109px;
+  -webkit-appearance: none;
+  background: var(--volume-slider-runnable-track);
   ${btn}
+  background-image: linear-gradient(var(--volume-progress-bgcolor), var(--volume-progress-bgcolor));
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid var(--volume-slider-thumb-border);
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background: var(--volume-slider-thumb-bgcolor);
+    cursor: pointer;
+    margin-top: -5px;
+  }
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+  }
 `
 const button = css`
   padding: 5px;
   display: flex;
   align-items: center;
+`
+
+export const TrackPlayReactionsLikeSvg = styled.svg`
+  width: 14px;
+  height: 12px;
+  fill: transparent;
+  stroke: var(--progressbar-player-icon-regular);
+`
+
+export const TrackPlayReactionsDisLikeSvg = styled.svg`
+  width: 14.34px;
+  height: 13px;
+  fill: transparent;
+  stroke: var(--progressbar-player-icon-regular);
+`
+
+const buttonIcon = css`
+  &:active svg {
+    stroke: var(--progressbar-player-btn-active);
+    fill: var(--progressbar-player-btn-active);
+    cursor: pointer;
+  }
+  &:hover svg {
+    fill: var(--progressbar-player-btn-hover);
+    stroke: var(--progressbar-player-btn-hover);
+    cursor: pointer;
+  }
+  &:active ${TrackPlayReactionsLikeSvg} {
+    fill: var(--progressbar-player-reaction-active-fill);
+    stroke: var(--progressbar-player-reaction-active-stroke);
+    cursor: pointer;
+  }
+  &:hover ${TrackPlayReactionsLikeSvg} {
+    fill: transparent;
+    stroke: var(--progressbar-player-btn-hover);
+    cursor: pointer;
+  }
+  &:active ${TrackPlayReactionsDisLikeSvg} {
+    fill: var(--progressbar-player-reaction-active-fill);
+    stroke: var(--progressbar-player-reaction-active-stroke);
+    cursor: pointer;
+  }
+  &:hover ${TrackPlayReactionsDisLikeSvg} {
+    fill: transparent;
+    stroke: var(--progressbar-player-btn-hover);
+    cursor: pointer;
+  }
 `
 
 export const PlayerBtnPrev = styled.div`
@@ -85,95 +147,40 @@ export const PlayerBtnPrev = styled.div`
 export const PlayerBtnPrevSvg = styled.svg`
   width: 15px;
   height: 14px;
+  fill: var(--progressbar-player-btn-regular);
+  stroke: var(--progressbar-player-btn-regular);
 `
 
 export const PlayerBtnPlay = styled.div`
+  ${buttonIcon}
   ${button}
   margin-right: 23px;
   ${btn}
 `
 
-export const PlayerBtnPlaySvg = styled.svg`
-  width: 22px;
-  height: 20px;
-  /* fill: #d9d9d9; */
-  fill: inherit;
-`
-
 export const PlayerBtnNext = styled.div`
   ${button}
   margin-right: 28px;
-  fill: #a53939;
   ${btn}
 `
 export const PlayerBtnNextSvg = styled.svg`
   width: 15px;
   height: 14px;
-  fill: inherit;
-  stroke: #d9d9d9;
+  fill: var(--progressbar-player-btn-regular);
+  stroke: var(--progressbar-player-btn-regular);
 `
 export const PlayerBtnRepeatSvg = styled.svg`
   width: 18px;
   height: 12px;
-  fill: transparent;
-  stroke: #696969;
+  fill: var(--progressbar-player-icon-regular);
+  stroke: var(--progressbar-player-icon-regular);
 `
 
-const trackPlayImg = css`
-  width: 51px;
-  height: 51px;
-  background-color: #313131;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;
-  grid-row: 1;
-  grid-column: 1;
-  grid-area: image;
-`
-export const TrackPlayImg = styled.div`
-  ${trackPlayImg}
-`
-
-export const TrackPlayImgSkeleton = styled.div`
-  ${trackPlayImg}
-`
-
-export const TrackPlayReactionsLikeSvg = styled.svg`
-  width: 14px;
-  height: 12px;
-  fill: transparent;
-  stroke: #696969;
-`
-
-export const TrackPlayReactionsDisLikeSvg = styled.svg`
-  width: 14.34px;
-  height: 13px;
-  fill: transparent;
-  stroke: #696969;
-`
-
-const buttonIcon = css`
-  &:active svg {
-    fill: transparent;
-    stroke: #ffffff;
-    cursor: pointer;
-  }
-  &:hover svg {
-    fill: transparent;
-    stroke: #acacac;
-    cursor: pointer;
-  }
-  &:active ${TrackPlayReactionsLikeSvg} {
-    fill: #696969;
-    stroke: #ffffff;
-    cursor: pointer;
-  }
-  &:active ${TrackPlayReactionsDisLikeSvg} {
-    fill: #696969;
-    stroke: #ffffff;
-    cursor: pointer;
-  }
+export const PlayerBtnPlaySvg = styled.svg`
+  width: 22px;
+  height: 20px;
+  fill: var(--progressbar-player-btn-regular);
+  stroke: var(--progressbar-player-btn-regular);
 `
 
 export const PlayerBtnRepeat = styled.div`
@@ -192,8 +199,8 @@ export const PlayerBtnShuffle = styled.div`
 export const PlayerBtnShuffleSvg = styled.svg`
   width: 19px;
   height: 12px;
-  fill: transparent;
-  stroke: #696969;
+  fill: var(--progressbar-player-icon-regular);
+  stroke: var(--progressbar-player-icon-regular);
 `
 export const PlayerTrack = styled.div`
   display: flex;
@@ -202,19 +209,17 @@ export const PlayerTrack = styled.div`
 
 export const PlayerTrackContain = styled.div`
   width: auto;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas: 'image author' 'image album';
+  display: flex;
   align-items: center;
 `
 
 export const TrackPlayAuthorSkeleton = styled.div`
-  background-color: #313131;
+  background-color: var(--track-title-bgcolor);
   width: 49px;
   height: 1em;
 `
 export const TrackPlayAlbumSkeleton = styled.div`
-  background-color: #313131;
+  background-color: var(--track-title-bgcolor);
   width: 49px;
   height: 1em;
 `
@@ -236,7 +241,7 @@ export const TrackPlayAuthorLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--text-color);
   white-space: nowrap;
 `
 
@@ -253,7 +258,7 @@ export const TrackPlayAlbumLink = styled.a`
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--text-color);
 `
 export const TrackPlayReactions = styled.div`
   display: flex;

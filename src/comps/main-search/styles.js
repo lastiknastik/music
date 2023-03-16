@@ -10,11 +10,11 @@ export const InputSearch = styled.input`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: var(--text-color);
   }
   &::placeholder {
     background-color: transparent;
-    color: #ffffff;
+    color: var(--text-color);
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -25,7 +25,7 @@ export const SearchImage = styled.svg`
   width: 17px;
   height: 17px;
   margin-right: 5px;
-  stroke: #ffffff;
+  stroke: var(--text-color);
   fill: transparent;
 `
 export const Search = styled.div`

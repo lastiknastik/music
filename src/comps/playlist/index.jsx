@@ -1,6 +1,7 @@
 import iconSprite from '../../img/icon/sprite.svg'
 import React from 'react'
 import * as S from './styles'
+import TrackCover from '../track-cover/index'
 
 function PlaylistItem(props) {
   return (
@@ -9,7 +10,7 @@ function PlaylistItem(props) {
         {props.isSkeletonVisible ? (
           <React.Fragment>
             <S.TrackTitle>
-              <S.TrackTitleImgSkeleton />
+              <TrackCover isSkeletonVisible={props.isSkeletonVisible} />
               <S.TrackTitleTextSkeleton />
             </S.TrackTitle>
             <S.TrackAuthorSkeleton />
@@ -18,11 +19,7 @@ function PlaylistItem(props) {
         ) : (
           <React.Fragment>
             <S.TrackTitle>
-              <S.TrackTitleImg>
-                <S.TrackTitleSvg alt="music">
-                  <use xlinkHref={iconSprite + '#icon-note'}></use>
-                </S.TrackTitleSvg>
-              </S.TrackTitleImg>
+              <TrackCover isSkeletonVisible={props.isSkeletonVisible} />
               <div>
                 <S.TrackTitleLink href="http://">
                   {props.title}
@@ -40,7 +37,7 @@ function PlaylistItem(props) {
             </S.TrackAlbum>
             <div>
               <S.TrackTimeSvg alt="time">
-                <use xlinkHref={iconSprite + 'icon-like'}></use>
+                <use xlinkHref={iconSprite + '#icon-like'}></use>
               </S.TrackTimeSvg>
               <S.TrackTimeText>{props.time}</S.TrackTimeText>
             </div>

@@ -46,11 +46,7 @@ export default function Playlist(props) {
         </S.MainCenterblock>
         <Sidebar name="Sergey.Ivanov" isSkeletonVisible={isSkeletonVisible} />
       </S.Main>
-      <PlayerBar
-        title="Ты та..."
-        author="Баста"
-        isSkeletonVisible={isSkeletonVisible}
-      />
+      <PlayerBar trackId="12" isSkeletonVisible={isSkeletonVisible} />
       <footer></footer>
     </React.Fragment>
   )

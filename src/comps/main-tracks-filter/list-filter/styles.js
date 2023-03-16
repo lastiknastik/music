@@ -11,11 +11,11 @@ export const ListFilterContent = styled.div`
   }
   &::-webkit-scrollbar {
     width: 4px;
-    background: #4b4949;
+    background: var(--filter-scrollbar-bgcolor);
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: #ffffff;
+    background: var(--text-color);
   }
   & {
     ::-webkit-scrollbar-track {
@@ -38,7 +38,7 @@ export const ListFilter = styled.div`
   height: 305px;
   border-radius: 12px;
   padding: 34px;
-  background: #313131;
+  background: var(--track-title-bgcolor);
   position: absolute;
   top: ${(props) => props.top}px;
   left: ${(props) => props.left}px;
